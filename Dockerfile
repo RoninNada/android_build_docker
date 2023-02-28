@@ -10,6 +10,8 @@ libncurses5 libncurses5-dev lib32ncurses5-dev libsdl1.2-dev libssl-dev libx11-de
 libxml2 libxml2-utils libwxgtk2.8-dev lzop make pngcrush python python3 rsync schedtool \
 squashfs-tools unzip x11proto-core-dev xsltproc zip
 
+RUN mkdir /usr/lib/jvm/
+
 RUN curl -o jdk8.tgz https://android.googlesource.com/platform/prebuilts/jdk/jdk8/+archive/master.tar.gz \
  && tar -zxf jdk8.tgz linux-x86 \
  && mv linux-x86 /usr/lib/jvm/java-8-openjdk-amd64 \
