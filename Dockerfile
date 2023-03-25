@@ -30,4 +30,6 @@ RUN chown $userid:$groupid /home/$username/.gitconfig
 ENV HOME=/home/$username
 ENV USER=$username
 
+RUN echo 'export ANDROID_JACK_VM_ARGS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4G"' >> /home/$username/.bashrc
+
 ENTRYPOINT chroot --userspec=$(cat /root/username):$(cat /root/username) / /bin/bash -i
